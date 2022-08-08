@@ -10,14 +10,16 @@
   </head>
   <body>
     <div id="app">
-      <h1>{{ name }}</h1>
+      <input v-model="text" type="text" :placeholder="placeholderValue" />
+      <p>{{ text }}</p>
     </div>
 
     <script>
       new Vue({
         el: "#app",
         data: {
-          name: "Aibol",
+          placeholderValue: "Введите что-нибудь",
+          text: "",
         },
       });
     </script>
