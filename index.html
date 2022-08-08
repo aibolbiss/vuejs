@@ -10,22 +10,33 @@
   </head>
   <body>
     <div id="app">
-      <ul v-for="user in users" :key="user.id">
-        <li>{{ user.name }} - {{ user.age }}</li>
-      </ul>
+      <button @click="isVisible = !isVisible">Click</button>
+      <h1 v-if="isVisible">Visible</h1>
     </div>
 
     <script>
       new Vue({
         el: "#app",
         data: {
-          users: [
-            { id: 1, name: "Aibol", age: 31 },
-            { id: 2, name: "Erlan", age: 31 },
-            { id: 3, name: "Azamat", age: 31 },
-            { id: 4, name: "Zhanerke", age: 22 },
-            { id: 5, name: "Asemai", age: 21 },
-          ],
+          isVisible: true,
+        },
+        beforeCreate() {
+          console.log("Before Create");
+        },
+        created() {
+          console.log("Created");
+        },
+        beforeMount() {
+          console.log("Before Mount");
+        },
+        mounted() {
+          console.log("Mounted");
+        },
+        beforeUpdate() {
+          console.log("Before Update");
+        },
+        updated() {
+          console.log("Updated");
         },
       });
     </script>
