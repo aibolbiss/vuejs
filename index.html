@@ -10,20 +10,22 @@
   </head>
   <body>
     <div id="app">
-      <button @click="getContent">Get Content</button>
-      <h1 v-if="isVisible">Hello, my name is Aibol</h1>
+      <ul v-for="user in users" :key="user.id">
+        <li>{{ user.name }} - {{ user.age }}</li>
+      </ul>
     </div>
 
     <script>
       new Vue({
         el: "#app",
         data: {
-          isVisible: true,
-        },
-        methods: {
-          getContent() {
-            this.isVisible = !this.isVisible;
-          },
+          users: [
+            { id: 1, name: "Aibol", age: 31 },
+            { id: 2, name: "Erlan", age: 31 },
+            { id: 3, name: "Azamat", age: 31 },
+            { id: 4, name: "Zhanerke", age: 22 },
+            { id: 5, name: "Asemai", age: 21 },
+          ],
         },
       });
     </script>
