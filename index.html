@@ -10,16 +10,19 @@
   </head>
   <body>
     <div id="app">
-      <input v-model="text" type="text" :placeholder="placeholderValue" />
-      <p>{{ text }}</p>
+      <button @click="getText">Get Text</button>
     </div>
 
     <script>
       new Vue({
         el: "#app",
         data: {
-          placeholderValue: "Введите что-нибудь",
-          text: "",
+          name: "Aibol",
+        },
+        methods: {
+          getText() {
+            console.log(`Hello ${this.name}`);
+          },
         },
       });
     </script>
